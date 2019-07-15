@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/admin.css.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-evaluate.css">
+    <link rel="stylesheet" href="../css/style-post.css">
+    <link rel="stylesheet" href="../css/amazeui.basic.css">
+    <link rel="stylesheet" href="../css/amazeui.basic.min.css">
+    <link rel="stylesheet" href="../css/amazeui.css">
+    <link rel="stylesheet" href="../css/amazeui.min.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<!--注册页面标题头-->
+<div style="
+    background-color:rgb(243, 189, 119);
+    height:80px;
+    width: 100%;">
+    <div style="
+    position: relative;
+    font-size:20px;
+    top:10px;
+    text-align: center;
+    line-height:60px;">
+        <strong>初次见面，多多指教</strong>
+    </div>
+</div>
+
+
+<div style="height: 150px"></div>
+<!--登录界面表单部分-->
+<form action="/login" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <div class="am-form am-form-horizontal" style="height: 200px">
+        <div style="height: 80px;font-size: 20px">
+            <div style="height: 50px"></div>
+        <span style="font-family: 黑体;margin-left: 200px;">你的名字:</span>
+        </div>
+        <div style="margin-left: 200px;margin-right: 500px">
+        {{ form.account(size=80)}}
+        {% for error in form.account.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+        </div>
+
+        <div style="height: 29px;font-size: 20px">
+        <span style="font-family: 黑体;margin-left: 200px;">你的密码:</span>
+        </div>
+        <div style="margin-left: 200px;margin-right: 500px">
+        {{ form.password(size=80) }}
+        {% for error in form.password.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}
+        </div>
+
+    </div>
+    <div class="am-form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> 记住这个秘密
+        </label>
+      </div>
+    </div>
+    </div>
+    <div class="am-form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+       <a href="C:\Users\皮断腿的蓝瘦鸭\Desktop\share-storehouse-master\项目网页文件\time controler.html">
+      <button type="submit" class="am-btn am-btn-default">欢迎回家</button></a>
+      <a href="Registration%20interface.html">
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          <button type="button" class="am-btn am-btn-default am-round">我是新来的</button>
+      </a>
+    </div>
+    </div>
+</form>
+
+</body>
+</html>

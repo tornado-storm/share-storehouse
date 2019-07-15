@@ -1,0 +1,229 @@
+
+.toptitle {
+    
+    background-color:rgb(243, 189, 119);
+    height:80px;
+    width: 100%;
+}
+
+
+
+/*顶部导航栏样式*/
+.toptext{
+    position: relative;
+    font-size:20px;
+    top:10px;
+    float:left;
+}
+
+.write1{
+    background-color: rgb(243, 189, 119);
+    border:1px solid;
+    width:1000px;
+    height: 90px;
+    position: relative;
+    top:25px;
+    left:250px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.write2{
+    background-color: rgb(243, 189, 119);
+    border:1px solid;
+    width:1000px;
+    height: 90px;
+    position: relative;
+    top:25px;
+    left:250px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.write3{
+    background-color: rgb(243, 189, 119);
+    border:1px solid;
+    width:1000px;
+    height: 90px;
+    position: relative;
+    top:25px;
+    left:250px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.write4{
+    background-color: rgb(243, 189, 119);
+    border:1px solid;
+    width:1000px;
+    height: 90px;
+    position: relative;
+    top:25px;
+    left:250px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.addition{
+    width: 60px;
+    height:60px;
+    border-radius: 30px;
+    background-color:rgb(243, 189, 119);
+    position: fixed;
+    bottom:120px;
+    right:30px;
+}
+
+
+/*底部导航栏样式*/
+.task-bar{
+    height:100px;
+    width:100%;
+    background-color:whitesmoke;
+    position: fixed;
+    bottom: 0px;
+    left: 10px;
+}
+/*任务部分模块结构*/
+.first{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+
+.second{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+
+.third{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+.fourth{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+.low-bar{
+    position: relative;
+    top:10px;
+    left:450px;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+/*creat task 文件新增样式部分*/
+/*创建任务界面标头*/
+.create_title{
+    position: relative;
+    font-size:20px;
+    top:10px;
+    text-align: center;
+    line-height:60px;
+
+}
+
+/*标签部分样式表*/
+.Creat_lable{
+   height: 200px;
+}
+
+.Creat_lable_title{
+    font-family: 微软雅黑;
+    height: 60px;
+    font-size:25px;
+}
+.Creat_lable1{
+    width: 25%;
+    float: left;
+}
+
+.Creat_lable2{
+    width: 25%;
+    float: left;
+}
+
+.Creat_lable3{
+   width: 25%;
+    float: left;
+}
+
+.Creat_lable4{
+   width: 25%;
+    float: left;
+}
+
+
+/*任务名称*/
+.Creat_task{
+    height: 150px;
+}
+
+.Creat_taskname{
+    margin-top: 30px;
+}
+
+/*任务等级*/
+.task_level{
+    height: 200px;
+}
+.task_level_1{
+    width: 25%;
+    float: left;
+}
+.task_level_2{
+    width: 25%;
+    float: left;
+}
+.task_level_3{
+    width: 25%;
+    float: left;
+}
+.task_level_4{
+    width: 25%;
+    float: left;
+}
+
+
+/*任务日期*/
+.Creat_date_title{
+    font-family: 微软雅黑;
+    height: 60px;
+    font-size:25px;
+}
+.Creat_date{
+    height: 150px;
+}
+
+
+/*任务时间*/
+.Creat_time{
+
+}
+
+
+
+
+
+
+
+/*注册页面部分样式表*/
+.Registration{
+    height: 1000px;
+    width: 50%;
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
