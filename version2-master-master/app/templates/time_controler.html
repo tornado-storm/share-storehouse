@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<!--标注你所用的html语言版本-->
+<!--lang标签为语言标签language-->
+<html lang = 'zh'>
+<head>
+<title>MAKE MORE TIME</title>
+<!--设置网页的标题-->
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="{{ url_for('static',filename='admin.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='amazeui.basic.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='amazeui.basic.min.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='amazeui.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='amazeui.min.css' )}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='app.css' )}}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!--link rel="shortcut icon"herf="bitbug_favicon.ico"type="image/x-icon"-->
+</head>
+
+<body>
+<div class="toptitle">
+    <div class="toptext"><strong>今天，你好 </strong>
+    &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+    <a href="{{ url_for('mail') }}"><i class="fa fa-envelope fa-3x" aria-hidden="true" style="color: white"></i></a>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    
+    <a href="{{ url_for('tomato') }}"><i class="fa fa-clock-o fa-3x" aria-hidden="true" style="color: white;padding-right:10px; "></i></a>
+    </div>
+</div>
+
+<div class="write1">
+打篮球<br>
+    7:00--8:00
+</div>
+
+<div class="write2">
+    唱歌<br>
+    8:00--9:00
+</div>
+
+<div class="write3">
+跳舞<br>
+    9:00--10:00
+</div>
+
+<div class="write4">
+练rap<br>
+    10:00-11:00
+</div>
+<a href="{{ url_for('create_task') }}">
+<div class="addition">
+    <br>
+        <div style="margin-left: 15px">
+            <i class="fa fa-plus fa-2x" aria-hidden="true" style="color: white"></i>
+        </div>
+
+
+</div>
+</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="task-bar">
+
+  <div class="low-bar">
+    <div class="first">
+            &nbsp;&nbsp;<a href="{{ url_for('tc') }}"><i class="fa fa-tasks fa-3x" aria-hidden="true"></i><br>今日任务</a>
+    </div>
+    <div class="second">
+            &nbsp;&nbsp;<a href="time_controler.html"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i><br>任务日历</a>
+    </div>
+    <div class="third">
+            &nbsp;&nbsp;<a href="{{ url_for('tce') }}"><i class="fa fa-sticky-note-o fa-3x" aria-hidden="true"></i><br>每周总结</a>
+    </div>
+    <div class="fourth">
+            &nbsp;&nbsp;<a href="http://127.0.0.1:5000/"><i class="fa fa-user fa-3x" aria-hidden="true"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+<!--设计你网页的内容-->
+</html>

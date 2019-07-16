@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/admin.css.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style-evaluate.css">
+    <link rel="stylesheet" href="../static/style-post.css">
+    <link rel="stylesheet" href="../static/amazeui.basic.css">
+    <link rel="stylesheet" href="../static/amazeui.basic.min.css">
+    <link rel="stylesheet" href="../static/amazeui.css">
+    <link rel="stylesheet" href="../static/amazeui.min.css">
+    <link rel="stylesheet" href="../static/app.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>注册界面</title>
+</head>
+
+<body>
+<div>
+
+<!--注册页面标题头-->
+<div class="toptitle">
+    <div class="create_title"><strong>初次见面，多多指教</strong></div>
+</div>
+
+
+
+    <div style="height: 200px"></div>
+<form action="/signin" method="post" name="signin">
+    <div class="am-g" style="margin-left:20%">
+        <div class=" col-md-8 col-sm-centered">
+            <form class="am-form">
+                <fieldset class="am-form-set">
+
+                    {{ form.hidden_tag() }}
+                    <div style="height: 80px;font-size: 20px">
+                        <div style="height: 50px"></div>
+                        <span style="font-family: 黑体;margin-left: 200px;">账号名称:</span>
+                    </div>
+                    <div style="margin-left: 200px;margin-right: 500px">
+                        {{ form.account(size=80)}}
+                        {% for error in form.account.errors %}
+                            <span style="color: red;">[{{error}}]</span>
+                        {% endfor %}
+                    </div>
+
+                    <div style="height: 80px;font-size: 20px">
+                        <div style="height: 50px"></div>
+                        <span style="font-family: 黑体;margin-left: 200px;">密码:</span>
+                    </div>
+                    <div style="margin-left: 200px;margin-right: 500px">
+                        {{ form.password1(size=80) }}
+                        {% for error in form.password1.errors %}
+                            <span style="color: red;">[{{error}}]</span>
+                        {% endfor %}
+                    </div>
+
+                    <div style="height: 80px;font-size: 20px">
+                        <div style="height: 50px"></div>
+                        <span style="font-family: 黑体;margin-left: 200px;">确认密码:</span>
+                    </div>
+                    {{ form.password2(size=80) }}
+                        {% for error in form.password2.errors %}
+                            <span style="color: red;">[{{error}}]</span>
+                        {% endfor %}
+                </fieldset>
+                <a href="{{ url_for('signin') }}">
+                    <button type="submit" class="am-btn am-btn-primary am-btn-block" style="width: 60%;height: 50px">注册个账号</button>
+                </a>
+            </form>
+        </div>
+    </div>
+</form>
+
+
+    <center>
+        <div class="task-bar">
+
+            <div class="low-bar">
+                <div class="first">
+                    &nbsp;&nbsp;<a href="{{ url_for('tc') }}"><i class="fa fa-tasks fa-3x" aria-hidden="true"></i><br>今日任务</a>
+                </div>
+                <div class="second">
+                    &nbsp;&nbsp;<a href="time_controler.html"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i><br>任务日历</a>
+                </div>
+                <div class="third">
+                    &nbsp;&nbsp;<a href="{{ url_for('tce') }}"><i class="fa fa-sticky-note-o fa-3x" aria-hidden="true"></i><br>每周总结</a>
+                </div>
+                <div class="fourth">
+                    &nbsp;&nbsp;<a href="http://127.0.0.1:5000/"><i class="fa fa-user fa-3x" aria-hidden="true"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我</a>
+                </div>
+
+            </div>
+        </div>
+    </center>
+</div>
+</body>
+</html>

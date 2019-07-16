@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--标注你所用的html语言版本-->
+<html lang = 'zh'>
+<head>
+<title>每周总结</title>
+<!--设置网页的标题-->
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="../css/admin.css.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/style-evaluate.css">
+    <link rel="stylesheet" href="../static/style-post.css">
+    <link rel="stylesheet" href="../static/amazeui.basic.css">
+    <link rel="stylesheet" href="../static/amazeui.basic.min.css">
+    <link rel="stylesheet" href="../static/amazeui.css">
+    <link rel="stylesheet" href="../static/amazeui.min.css">
+    <link rel="stylesheet" href="../static/app.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="toptitle">
+        <div class="toptext">
+            <strong><center>给这个星期的自己打个分吧！</center> </strong>
+        </div>
+    </div>
+<br><br>
+
+    <div style="background-color:pink;height: 50px">
+              <script type="text/javascript">
+             
+                var date = new Date();
+                document.write("今天是：" + date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日" + " 星期" + "日一二三四五六".charAt(date.getDay()));
+              </script>
+        </span>
+    </div>
+
+        <div id="score" style="height: 100px;">
+	    	<span>请为自己的表现打分</span>
+	    	<ul class="clearfix" style="width: 100%">
+	    		<li>☆</li>
+	    		<li>☆</li>
+	    		<li>☆</li>
+	    		<li>☆</li>
+	    		<li>☆</li>
+	    	</ul>
+	    	<p><strong><div class="strong-valuate"></div></strong></p>
+	    	<div id="tip">
+	    		<strong><div class="strong-valuate">1星,非常糟糕</div></strong>
+	    		<div class="triangle"></div>
+	    		<div class="triangle_outer"></div>
+	    	</div>
+	    </div>
+    </div>
+
+
+        <div class="task-bar">
+
+  <div class="task-bar">
+
+      <div class="low-bar">
+          <div class="first">
+              &nbsp;&nbsp;<a href="{{ url_for('tc') }}"><i class="fa fa-tasks fa-3x" aria-hidden="true"></i><br>今日任务</a>
+          </div>
+          <div class="second">
+              &nbsp;&nbsp;<a href="time_controler.html"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i><br>任务日历</a>
+          </div>
+          <div class="third">
+            &nbsp;&nbsp;<a href="{{ url_for('tce') }}"><i class="fa fa-sticky-note-o fa-3x" aria-hidden="true"></i><br>每周总结</a>
+          </div>
+          <div class="fourth">
+              &nbsp;&nbsp;<a href="http://127.0.0.1:5000/"><i class="fa fa-user fa-3x" aria-hidden="true"></i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我</a>
+          </div>
+
+      </div>
+  </div>
+    
+</body>
+<!--设计你网页的内容-->
+
+<script src="../jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    var oScore = document.getElementById("score");
+    var oTip   = document.getElementById("tip");
+    var oLi    =   oScore.getElementsByTagName('li');
+    var oStrong=   oScore.getElementsByTagName('strong');
+    var oSpan  =   oScore.getElementsByTagName('span')[0];
+    var iScore = iPoint = 0;
+    var msg=['1星  非常糟糕','2星  糟糕','3星  一般','4星  良好','5星  非常棒'];
+    var review=['1星满意度,继续努力','2星满意度,继续努力','3星满意度,差强人意','4星满意度,再接再厉','5星满意度,无可挑剔'];
+    for(var i=0;i<oLi.length;i++){
+          oLi[i].index=i;
+          oLi[i].onmouseover = function(){
+               iScore = this.index+1;             //记录下索引值
+               fnPoint(iScore);                   //鼠标移过显示评分
+               oTip.style.display='block';        //让提示框显示在对应的位置
+               oTip.style.left = 160+this.index*48+'px';
+               oStrong[1].innerHTML = msg[this.index];  //移过不同的星星显示对应的文字
+               console.log(this.index)
+          }
+          oLi[i].onclick = function(){
+                 oStrong[0].innerHTML = review[this.index]; //右上角评价结果显示
+                 iPoint = this.index+1;       //鼠标点击事件，记录下索引，并返回索引值
+                 return iPoint;
+                 
+          }
+          oLi[i].onmouseout = function(){  //接收点击的索引，鼠标移出后，恢复上次的评分
+               fnPoint(iPoint);
+               oTip.style.display='none';     //鼠标移出隐藏提示框
+          }
+          
+    }
+    function fnPoint(arg){                
+          iScore = arg? arg:iScore;        //接收一个参数，如果没传进参数就用iScore
+          for(var i=0;i<oLi.length;i++){   //遍历oLi,对点击的和之前的都亮起来，之后的不亮
+               oLi[i].className = i<iScore? 'current':'';  
+          }
+    }
+
+
+
+
+</script>
+
+
+</html>
