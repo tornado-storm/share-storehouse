@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--标注你所用的html语言版本-->
+<html lang = 'zh'>
+<head>
+<title>Calendar</title>
+<!--设置网页的标题-->
+<meta charset='UTF-8'>
+<link rel="stylesheet" href="./style-calendar.css">
+</head>
+<body>
+
+   <div class="toptitle">
+      <div class="toptext"><strong><center>任务日历</center> </strong>
+      </div>
+  </div>
+<br><br>
+   <center><form id="datetime" action="" method="post">
+      <input type="date" style="font-size:27px">
+      <input type="submit" value="确定"style="font-size:15px">
+   </form><center>
+    <br><br><br><br>
+   <center><div class="task-display"><p>创建时间：{{task.time}} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+         属性：{{task.quality}}
+      </p>
+      <p>{{task.itself}}</p></div><center>
+
+
+<div class="task-bar">
+      
+      <div class="low-bar">
+                
+        <div class="first">
+               &nbsp;&nbsp;<a href="./time controler-main.html"><img src = "../logo素材/timg.jpg" height = "48px",width = "48px"><br>今日任务</a>
+        </div>
+          <div class="second">
+            &nbsp;&nbsp;<a href=""><img src = "../logo素材/date.jpg" height = "48px",width = "48px"><br>任务日历</a>
+        </div>
+        <div class="third">
+                &nbsp;&nbsp;<a href=""><img src = "../logo素材/find2.jpg" height = "48px",width = "48px"><br>每周总结</a>
+        </div>
+          <div class="fourth">
+                &nbsp;&nbsp;<a href=""><img src = "../logo素材/me.jpg" height = "48px",width = "48px"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我</a>
+        </div>
+                
+      </div>
+ </div>
+
+   <!--input type="date">
+   <fmt:formatDate value="${bean.createTime}" pattern="yyyy-MM-dd" var="applyDate" />
+   <input type="hidden" name="createTime" id="applyDate" value="${applyDate}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'});"/-->
+</body>
+<!--设计你网页的内容-->
+</html>

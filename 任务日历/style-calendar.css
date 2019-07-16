@@ -1,0 +1,67 @@
+
+.toptitle {
+    
+    background-color:rgb(243, 189, 119);
+    height:80px;
+    width: 1500px;
+}
+
+.toptext{
+    line-height: 40px;
+    font-size:30px;
+    position: relative;
+    top:20px;
+}
+
+.task-display{
+    height: 300px;
+    width: 550px;
+    border:2px solid;
+    border-color: pink
+}
+
+.task-bar{
+    height:100px;
+    width:1500px;
+    background-color:whitesmoke;
+    position: fixed;
+    bottom:0px;
+    left: 10px;
+}
+
+.first{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+
+.second{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+
+.third{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+.fourth{
+    width:100px;
+    float:left;
+    margin-right: 90px;
+}
+.low-bar{
+    position: relative;
+    top:10px;
+    left:450px;
+}
+a{
+    text-decoration: none;
+}
+
+.post{
+   position: relative;
+   left:1300px;
+    width:50px;
+}
