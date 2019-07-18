@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--标注你所用的html语言版本-->
+<html lang = 'zh'>
+<head>
+<title>给自己的一封信</title>
+<!--设置网页的标题-->
+<meta charset='UTF-8'>
+<link rel="stylesheet"href="../static/style-post.css">
+
+<meta charset="UTF-8">
+    <title>Today个人时间管理平台</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #neko {
+            width: 100px;
+            height: 100px;
+            background: #ddd;
+            position: fixed;
+            cursor: move;
+            box-sizing: border-box;
+            border: 10px solid #46aef7;
+            border-radius: 50%;
+            background: url('620c23bd4d574d43ad14f0ad8c92a288.png') no-repeat center center;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <nav>
+        <div class="menu-btn">
+            <div class="line line--1"></div>
+            <div class="line line--2"></div>
+            <div class="line line--3"></div>
+        </div>
+
+        <div class="nav-links">
+            <a href="./index.html" class="link"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Today's Mission</a>
+            <a href="./calendar.html" class="link"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Calendar</a>
+            <a href="./evaluate.html" class="link"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Weekly Summary</a>
+            <a href="./me.html" class="link"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Others</a>
+        </div>
+    </nav>
+
+    <div class="inform">
+        Today
+    </div>
+    <div class="frame">
+
+        <div class="center">
+            <div class="feiji">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a href="tomato.html" class="link"><i class="fa fa-history" aria-hidden="true" style="color:#46aef7"></i></a>
+                <a href="./post.html" class="link"><i class="fa fa-envelope-o" aria-hidden="true" style="color:#46aef7"></i></a>
+            </div>
+            <br>
+    <div class="todo-cmp">
+        <div class="todo-cmp__header"><strong><center>一封信</center> </strong>
+        </div>
+        <input type="image" src="../static/logo/fly.jpg"height="50px"width="50px"
+            onclick="send()" style="margin-left:85%"
+            name="img" title="写好了，发送吧！"> 
+    </div>
+
+
+    <br>
+
+    <form action="">
+
+    <span style="color:#46aef7"fort-size:40px>
+    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>写下想对未来自己说的话吧！<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    <br>
+    <br>
+    <div style="margin-left:80%">
+    <!--img src="../logo素材/fly.jpg" height="50px"width="50px"-->
+
+    </div>    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+    <textarea cols="100"rows="30"style="color:black;margin-left:5%;border-radius:10px;border-color:#46aef7;border-width:4px">
+        </textarea>
+    </form>
+
+
+<script>
+function send(){
+if(confirm("你确定发送吗？")){
+  alert("恭喜你，你会在未来的某个时候收到自己的信哦")
+}
+}
+</script>
+
+</div>
+</div>
+<div id="neko"><a href="create_task.html"><img src="620c23bd4d574d43ad14f0ad8c92a288.png" /></a></div>
+
+
+<script>var neko = document.querySelector('#neko');
+    var nekoW = neko.offsetWidth;
+    var nekoH = neko.offsetHeight;
+    var cuntW = 0;
+    var cuntH = 0;
+    neko.style.left = parseInt(Math.random() * (document.body.offsetWidth - nekoW)) + 'px';
+    neko.style.top = parseInt(Math.random() * (document.body.offsetHeight - nekoH)) + 'px';
+
+    function move(obj, w, h) {
+        if (obj.direction === 'left') {
+            obj.style.left = 0 - w + 'px';
+        } else if (obj.direction === 'right') {
+
+            obj.style.left = document.body.offsetWidth - nekoW + w + 'px';
+        }
+        if (obj.direction === 'top') {
+            obj.style.top = 0 - h + 'px';
+        } else if (obj.direction === 'bottom') {
+            obj.style.top = document.body.offsetHeight - nekoH + h + 'px';
+        }
+    }
+
+    function rate(obj, a) {
+        //  console.log(a);
+        obj.style.transform = ' rotate(' + a + ')'
+    }
+
+    function action(obj) {
+
+        var dir = obj.direction;
+
+        switch (dir) {
+            case 'left':
+                rate(obj, '90deg');
+                break;
+            case 'right':
+                rate(obj, '-90deg');
+                break;
+            case 'top':
+                rate(obj, '-180deg');
+                break;
+            default:
+                rate(obj, '-0');
+                break;
+        }
+
+    }
+    neko.onmousedown = function (e) {
+        var nekoL = e.clientX - neko.offsetLeft;
+        var nekoT = e.clientY - neko.offsetTop;
+        document.onmousemove = function (e) {
+            cuntW = 0;
+            cuntH = 0;
+            neko.direction = '';
+            neko.style.transition = '';
+            neko.style.left = (e.clientX - nekoL) + 'px';
+            neko.style.top = (e.clientY - nekoT) + 'px';
+            if (e.clientX - nekoL < 5) {
+                neko.direction = 'left';
+            }
+            if (e.clientY - nekoT < 5) {
+                neko.direction = 'top';
+            }
+            if (e.clientX - nekoL > document.body.offsetWidth - nekoW - 5) {
+                neko.direction = 'right';
+            }
+            if (e.clientY - nekoT > document.body.offsetHeight - nekoH - 5) {
+                neko.direction = 'bottom';
+            }
+
+            move(neko, 0, 0);
+
+
+        }
+    }
+    neko.onmouseover = function () {
+        move(this, 0, 0);
+        rate(this, 0)
+    }
+
+    neko.onmouseout = function () {
+        move(this, nekoW / 2, nekoH / 2);
+        action(this);
+    }
+
+    neko.onmouseup = function () {
+        document.onmousemove = null;
+        this.style.transition = '.5s';
+        move(this, nekoW / 2, nekoH / 2);
+        action(this);
+    }
+
+    window.onresize = function () {
+        var bodyH = document.body.offsetHeight;
+        var nekoT = neko.offsetTop;
+        var bodyW = document.body.offsetWidth;
+        var nekoL = neko.offsetLeft;
+
+        if (nekoT + nekoH > bodyH) {
+            neko.style.top = bodyH - nekoH + 'px';
+            cuntH++;
+        }
+        if (bodyH > nekoT && cuntH > 0) {
+            neko.style.top = bodyH - nekoH + 'px';
+        }
+        if (nekoL + nekoW > bodyW) {
+            neko.style.left = bodyW - nekoW + 'px';
+            cuntW++;
+        }
+        if (bodyW > nekoL && cuntW > 0) {
+            neko.style.left = bodyW - nekoW + 'px';
+        }
+
+        move(neko, nekoW / 2, nekoH / 2);
+    }</script>
+<script src="../static/index.js"></script>
+
+    <!--div class="task-bar">
+      
+        <div class="low-bar">
+      
+          <div class="first">
+                  &nbsp;&nbsp;<a href="./time controler-main.html"><img src = "../logo素材/timg.jpg" height = "48px",width = "48px"><br>今日任务</a>
+          </div>
+          <div class="second">
+                  &nbsp;&nbsp;<a href=""><img src = "../logo素材/date.jpg" height = "48px",width = "48px"><br>任务日历</a>
+          </div>
+          <div class="third">
+                  &nbsp;&nbsp;<a href=""><img src = "../logo素材/find2.jpg" height = "48px",width = "48px"><br>每周总结</a>
+          </div>
+          <div class="fourth">
+                  &nbsp;&nbsp;<a href=""><img src = "../logo素材/me.jpg" height = "48px",width = "48px"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我</a>
+          </div>
+      
+        </div>
+      </div-->
+</body>
+<!--设计你网页的内容-->
+</html>

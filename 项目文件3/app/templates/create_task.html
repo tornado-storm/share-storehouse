@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Today个人时间管理平台</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/ui-choose.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/demo.css">
+    <link rel="stylesheet" type="text/css" href="../static/demo1.css">
+    <link rel="stylesheet" href="../static/jHsDate.css"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #neko {
+            width: 100px;
+            height: 100px;
+            background: #ddd;
+            position: fixed;
+            cursor: move;
+            box-sizing: border-box;
+            border: 10px solid #46aef7;
+            border-radius: 50%;
+            background: url('620c23bd4d574d43ad14f0ad8c92a288.png') no-repeat center center;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+
+        .demo-box {
+            margin: 0px auto;
+            width: 1000px;
+            padding: 20px;
+
+            background: #fafafa;
+        }
+
+        .demo-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .demo-table caption {
+            border-bottom: 1px dashed #ccc;
+            height: 40px;
+            margin-bottom: 20px;
+            font: 18px/1.2 normal 'microsoft yahei';
+        }
+
+        .demo-table tr td {
+            padding: 8px 10px;
+            font: 16px/1.8 normal 'microsoft yahei';
+            vertical-align: top;
+        }
+
+        .ui-input {
+            vertical-align: top;
+            height: 18px;
+            font-size: 16px;
+            line-height: 20px;
+            border: 1px solid #aaa;
+            padding: 6px 8px;
+            border-radius: 3px;
+        }
+
+
+        .switch_box {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            max-width: 200px;
+            min-width: 200px;
+            height: 50px;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+        }
+
+        /* Switch 1 Specific Styles Start */
+
+        .box_1 {
+            background: #ddd;
+        }
+
+        input[type="checkbox"].switch_1 {
+            font-size: 30px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 3.5em;
+            height: 1.5em;
+            background: #ddd;
+            border-radius: 3em;
+            position: absolute;
+            cursor: pointer;
+            outline: none;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        input[type="checkbox"].switch_1:checked {
+            background: #0ebeff;
+        }
+
+        input[type="checkbox"].switch_1:after {
+            position: absolute;
+            content: "";
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            background: #fff;
+            -webkit-box-shadow: 0 0 .25em rgba(0, 0, 0, .3);
+            box-shadow: 0 0 .25em rgba(0, 0, 0, .3);
+            -webkit-transform: scale(.7);
+            transform: scale(.7);
+            left: 0;
+        }
+
+        input[type="checkbox"].switch_1:checked:after {
+            left: calc(100% - 1.5em);
+        }
+
+        /* Switch 1 Specific Style End */
+
+    </style>
+
+</head>
+<body>
+
+<nav>
+    <div class="menu-btn">
+        <div class="line line--1"></div>
+        <div class="line line--2"></div>
+        <div class="line line--3"></div>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html" class="link"><i class="fa fa-home fa-fw" aria-hidden="true"></i>&nbsp;Today's Mission</a>
+        <a href="" class="link"><i class="fa fa-calendar-o" aria-hidden="true"></i>&nbsp;Calendar</a>
+        <a href="" class="link"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Weekly Summary</a>
+        <a href="" class="link"><i class="fa fa-archive" aria-hidden="true"></i>&nbsp;mailbox</a>
+    </div>
+</nav>
+
+<div class="inform">
+    Today
+</div>
+<div class="frame">
+
+    <div class="center">
+        <div class="feiji">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="tomato.html" class="link"><i class="fa fa-history" aria-hidden="true"
+                                                  style="color:#46aef7"></i></a>
+            <a href="" class="link"><i class="fa fa-envelope-o" aria-hidden="true" style="color:#46aef7"></i></a>
+        </div>
+
+
+        <!--开始与数据库交互数据-->
+        <form action={{ url_for('cm') }} method="post" name="login">
+            <div class="demo-box">
+                <table class="demo-table">
+                    <caption>
+                        CREATE A MISSION
+                    </caption>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>KIND</label></td>
+                        <td>
+                            <ul class="ui-choose" id="uc_01">
+                                <li><input type="radio" name="label" class="fa fa-search" aria-hidden="true" value="1">工作
+                                </li>
+                                <li><input type="radio" name="label" class="fa fa-envira" aria-hidden="true" value="2">生活
+                                </li>
+                                <li><input type="radio" name="label" class="fa fa-pencil" aria-hidden="true" value="3">学习
+                                </li>
+                                <li><input type="radio" name="label" class="fa fa-futbol-o" aria-hidden="true"
+                                           value="4">娱乐
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>IMPORTANTANCE</label></td>
+                        <td>
+                            <ul class="ui-choose" id="uc_01">
+                                <li><input type="radio" name="level" class="fa fa-exclamation" aria-hidden="true"
+                                           value="1"
+                                           style="color:red">高
+                                </li>
+                                <li><input type="radio" name="level" class="fa fa-exclamation" aria-hidden="true"
+                                           value="2"
+                                           style="color:orange">中
+                                </li>
+                                <li><input type="radio" name="level" class="fa fa-exclamation" aria-hidden="true"
+                                           value="3"
+                                           style="color:blue">低
+                                </li>
+                                <li><input type="radio" name="level" class="fa fa-exclamation" aria-hidden="true"
+                                           value="4"
+                                           style="color:black">无
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>NAME</label></td>
+                        <td>
+                            {{ form.name(size=40) }}
+                            {% for error in form.name.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </td>
+
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>DATE</label></td>
+                        <td>
+                            {{ form.date(size=40) }}
+                            {% for error in form.date.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </td>
+
+                    </tr>
+
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>BEGIN</label></td>
+
+                        <td>
+
+
+                            {{ form.start_time(size=40) }}
+                            {% for error in form.start_time.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>FINISH</label></td>
+
+                        <td>
+
+
+                            {{ form.end_time(size=40) }}
+                            {% for error in form.end_time.errors %}
+                                <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td style="width:120px;"><label>REMIND</label></td>
+                        <td>
+
+                            <div>
+                                <input type="checkbox" class="switch_1">
+                            </div>
+
+
+                        </td>
+
+                    </tr>
+
+                </table>
+                <div class="container">
+                    <div class="row pad-15">
+
+
+                        <div class="col-sm-3">
+                            <button type="submit" class="btn btn-lg blue" value="确认创建">确认创建</button>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div id="neko"><a href="https://www.baidu.com"><img src="620c23bd4d574d43ad14f0ad8c92a288.png"/></a></div>
+
+
+<script>var neko = document.querySelector('#neko');
+var nekoW = neko.offsetWidth;
+var nekoH = neko.offsetHeight;
+var cuntW = 0;
+var cuntH = 0;
+neko.style.left = parseInt(Math.random() * (document.body.offsetWidth - nekoW)) + 'px';
+neko.style.top = parseInt(Math.random() * (document.body.offsetHeight - nekoH)) + 'px';
+
+function move(obj, w, h) {
+    if (obj.direction === 'left') {
+        obj.style.left = 0 - w + 'px';
+    } else if (obj.direction === 'right') {
+
+        obj.style.left = document.body.offsetWidth - nekoW + w + 'px';
+    }
+    if (obj.direction === 'top') {
+        obj.style.top = 0 - h + 'px';
+    } else if (obj.direction === 'bottom') {
+        obj.style.top = document.body.offsetHeight - nekoH + h + 'px';
+    }
+}
+
+function rate(obj, a) {
+    //  console.log(a);
+    obj.style.transform = ' rotate(' + a + ')'
+}
+
+function action(obj) {
+
+    var dir = obj.direction;
+
+    switch (dir) {
+        case 'left':
+            rate(obj, '90deg');
+            break;
+        case 'right':
+            rate(obj, '-90deg');
+            break;
+        case 'top':
+            rate(obj, '-180deg');
+            break;
+        default:
+            rate(obj, '-0');
+            break;
+    }
+
+}
+
+neko.onmousedown = function (e) {
+    var nekoL = e.clientX - neko.offsetLeft;
+    var nekoT = e.clientY - neko.offsetTop;
+    document.onmousemove = function (e) {
+        cuntW = 0;
+        cuntH = 0;
+        neko.direction = '';
+        neko.style.transition = '';
+        neko.style.left = (e.clientX - nekoL) + 'px';
+        neko.style.top = (e.clientY - nekoT) + 'px';
+        if (e.clientX - nekoL < 5) {
+            neko.direction = 'left';
+        }
+        if (e.clientY - nekoT < 5) {
+            neko.direction = 'top';
+        }
+        if (e.clientX - nekoL > document.body.offsetWidth - nekoW - 5) {
+            neko.direction = 'right';
+        }
+        if (e.clientY - nekoT > document.body.offsetHeight - nekoH - 5) {
+            neko.direction = 'bottom';
+        }
+
+        move(neko, 0, 0);
+
+
+    }
+}
+neko.onmouseover = function () {
+    move(this, 0, 0);
+    rate(this, 0)
+}
+
+neko.onmouseout = function () {
+    move(this, nekoW / 2, nekoH / 2);
+    action(this);
+}
+
+neko.onmouseup = function () {
+    document.onmousemove = null;
+    this.style.transition = '.5s';
+    move(this, nekoW / 2, nekoH / 2);
+    action(this);
+}
+
+window.onresize = function () {
+    var bodyH = document.body.offsetHeight;
+    var nekoT = neko.offsetTop;
+    var bodyW = document.body.offsetWidth;
+    var nekoL = neko.offsetLeft;
+
+    if (nekoT + nekoH > bodyH) {
+        neko.style.top = bodyH - nekoH + 'px';
+        cuntH++;
+    }
+    if (bodyH > nekoT && cuntH > 0) {
+        neko.style.top = bodyH - nekoH + 'px';
+    }
+    if (nekoL + nekoW > bodyW) {
+        neko.style.left = bodyW - nekoW + 'px';
+        cuntW++;
+    }
+    if (bodyW > nekoL && cuntW > 0) {
+        neko.style.left = bodyW - nekoW + 'px';
+    }
+
+    move(neko, nekoW / 2, nekoH / 2);
+}</script>
+<script src="../static/index.js"></script>
+<script src="../static/jquery.js"></script>
+<script src="../static/ui-choose.js"></script>
+<script>// 将所有.ui-choose实例化
+$('.ui-choose').ui_choose();
+
+// uc_01 ul 单选
+var uc_01 = $('#uc_01').data('ui-choose');
+uc_01.click = function (index, item) {
+    console.log('click', index, item.text())
+}
+uc_01.change = function (index, item) {
+    console.log('change', index, item.text())
+}
+
+// uc_02 select 单选
+var uc_02 = $('#uc_02').data('ui-choose');
+uc_02.click = function (value, item) {
+    console.log('click', value);
+};
+uc_02.change = function (value, item) {
+    console.log('change', value);
+};
+
+// uc_03 ul 多选
+var uc_03 = $('#uc_03').data('ui-choose');
+uc_03.click = function (index, item) {
+    console.log('click', index);
+};
+uc_03.change = function (index, item) {
+    console.log('change', index);
+};
+
+// uc_04 select 多选
+var uc_04 = $('#uc_04').ui_choose();
+uc_04.click = function (value, item) {
+    console.log('click', value);
+};
+uc_04.change = function (value, item) {
+    console.log('change', value);
+};</script>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jHsDate.js"></script>
+<script type="text/javascript">$('#time').jHsDate({
+    format: 'hh:mm'
+});</script>
+
+
+</body>
+</html>
