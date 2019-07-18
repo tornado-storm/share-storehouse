@@ -1,0 +1,280 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+
+nav {
+    overflow: hidden;
+    position: relative;
+    transform: translateX(-300px);
+    height: 100%;
+    width: 400px;
+    transition: all 800ms cubic-bezier(.8, 0, .33, 1);
+    border-radius: 0% 0% 100% 50%;
+}
+
+nav.nav-open {
+    transform: translateX(0px);
+    border-radius: 0% 0% 0% 0%;
+	 background: rgba(255, 255, 255, 0.6);
+}
+
+nav .menu-btn {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    padding: 0;
+    width: 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+nav .menu-btn .line {
+    padding: 0;
+    width: 30px;
+    background: #fff;
+    height: 2px;
+    margin: 5px 0;
+    transition: all 700ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .menu-btn .line.line--1 {
+    width: 30px;
+    transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--1.line-cross {
+    width: 30px;
+    transform: rotate(45deg) translateY(10px);
+	 background: rgba(0,0,0,0.6);
+}
+
+nav .menu-btn .line.line--2 {
+    width: 28px;
+    transform: translateX(0);
+}
+
+nav .menu-btn .line.line--2.line-fade-out {
+    width: 28px;
+    transform: translate(30px);
+    opacity: 0;
+}
+
+nav .menu-btn .line.line--3 {
+    width: 20px;
+    transform: rotate(0) translateY(0);
+}
+
+nav .menu-btn .line.line--3.line-cross {
+    width: 30px;
+    transform: rotate(-45deg) translateY(-10px);
+	 background: rgba(0,0,0,0.6);
+}
+
+nav .nav-links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: all 900ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links.fade-in {
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+nav .nav-links .link {
+    margin: 20px 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    color: rgba(0,0,0,0.9);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: all 300ms cubic-bezier(.9, 0, .33, 1);
+}
+
+nav .nav-links .link:hover {
+    color: rgba(0, 0, 0, .5);
+}
+
+
+.inform{
+	position: absolute;
+	top: 5%;
+	left: 15%;
+	transform: translate(-50%, -50%);
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 2rem;
+	font-family: sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	text-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+
+a{
+	margin: 0 20px;
+	color: #fff;
+	font-size: 2rem;
+	transition: all 400ms ease;
+}
+
+a:hover{
+	color: #222;
+}
+.frame {
+    position: absolute;
+    top: 22%;
+    left: 45.4%;
+    width: 940px;
+    height:1000px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /*
+  http://colorzilla.com/gradient-editor */
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fda231', endColorstr='#fdca31',GradientType=1 );
+}
+
+.center {
+    position: relative;
+    top: 0px;
+    left: 0px;
+
+}
+
+.todo-cmp {
+    background: #ffffff;
+    color: #497081;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.15);
+    width: 940px;
+}
+
+.todo-cmp__header {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+    .todo-cmp__header h2 {
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin: 4px auto;
+        padding: 0;
+    }
+
+    .todo-cmp__header p {
+        padding: 0 0 5px;
+        margin: 4px auto;
+        font-size: 0.8rem;
+    }
+
+.todo-cmp__list {
+    list-style: none;
+    padding: 0;
+}
+
+    .todo-cmp__list li {
+        padding: 10px 0 15px;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+        .todo-cmp__list li label {
+            cursor: pointer;
+            font-size: 0.82rem;
+            width: 100%;
+            display: block;
+        }
+
+            .todo-cmp__list li label input {
+                float: right;
+                opacity: 0;
+            }
+
+            .todo-cmp__list li label span {
+                position: relative;
+                display: block;
+                transition: all 550ms ease-in-out;
+            }
+
+            .todo-cmp__list li label input + span::after {
+                content: "";
+                display: block;
+                border: 1px solid #497081;
+                border-radius: 13px;
+                height: 13px;
+                width: 13px;
+                position: absolute;
+                right: 0;
+                top: 1px;
+                z-index: 10;
+                transition: all 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                /* https://matthewlein.com/tools/ceaser */
+            }
+
+            .todo-cmp__list li label input + span::before {
+                content: "✔";
+                display: block;
+                font-size: 22px;
+                height: 13px;
+                width: 13px;
+                position: absolute;
+                right: -2px;
+                top: -8px;
+                z-index: 10;
+                opacity: 0;
+            }
+
+            .todo-cmp__list li label input:checked + span {
+                color: #ccc;
+                transition: all 550ms ease-in-out;
+            }
+
+                .todo-cmp__list li label input:checked + span::after {
+                    opacity: 0;
+                    height: 17px;
+                    width: 17px;
+                    top: -2px;
+                    right: -2px;
+                }
+
+                .todo-cmp__list li label input:checked + span::before {
+                    opacity: 1;
+                    transition: all 550ms ease-in-out;
+                }
+feiji {
+    position: relative;
+    top: 2000px;
+    left: 10px;
+}
